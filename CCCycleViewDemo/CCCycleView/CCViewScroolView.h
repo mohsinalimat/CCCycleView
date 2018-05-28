@@ -12,15 +12,17 @@
 
 @protocol CCViewScrollViewDataSource <NSObject>
 
-- (UIView *)CC_viewForModel:(id)model;
+- (UIView *)cc_viewForModel:(id)model;
+
+- (CGSize)cc_viewForModel:(id)model index:(NSInteger)index;
 
 @end
 
 @protocol CCViewScrollViewDelegate <NSObject>
 
-- (void)CC_scrollDidSelectItem:(NSInteger)index model:(id)model view:(UIView *)view;
+- (void)cc_scrollDidSelectItem:(NSInteger)index model:(id)model view:(UIView *)view;
 
-- (void)CC_scrollDidScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)cc_scrollDidScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 @end
 
@@ -42,7 +44,12 @@
  whether the scroll is infinite
  default is YES
  */
-@property (assign, nonatomic) BOOL infinite;
+@property (assign, nonatomic,getter=isInfinite) BOOL infinite;
+/**
+ whether the scroll is pageControl
+ default is YES
+ */
+@property (assign, nonatomic,getter=isPageControl) BOOL pageControl;
 /**
  the auto scroll time
  default is 3.0f

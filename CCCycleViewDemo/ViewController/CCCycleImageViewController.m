@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  CCCycleImageViewController.m
 //  CCCycleViewDemo
 //
 //  Created by MDLK-CC on 2018/5/10.
 //  Copyright © 2018年 CC. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CCCycleImageViewController.h"
 #import "CCViewScroolView.h"
 #import "CCCycleViewDemoModel.h"
 
-@interface ViewController ()<CCViewScrollViewDataSource,CCViewScrollViewDelegate>
+@interface CCCycleImageViewController ()<CCViewScrollViewDataSource,CCViewScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet CCViewScroolView *viewScrollView;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ViewController
+@implementation CCCycleImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +48,7 @@
 
 
 #pragma mark - CCViewScrollViewDataSource
-- (UIView *)CC_viewForModel:(NSObject *)model
+- (UIView *)cc_viewForModel:(NSObject *)model
 {
     if ([model.CC_reUseStringKey isEqualToString:@"UILabel"]) {
         UILabel *label = [[UILabel alloc] init];
@@ -74,12 +74,12 @@
 }
 
 #pragma mark - CCViewScrollViewDelegate
-- (void)CC_scrollDidSelectItem:(NSInteger)index model:(id)model view:(UIView *)view
+- (void)cc_scrollDidSelectItem:(NSInteger)index model:(id)model view:(UIView *)view
 {
     NSLog(@"%ld",(long)index);
 }
 
-- (void)CC_scrollDidScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+- (void)cc_scrollDidScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
 {
     NSLog(@"from:%ld --> to:%ld",fromIndex,toIndex);
 }

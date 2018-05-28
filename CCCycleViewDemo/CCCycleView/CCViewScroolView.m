@@ -13,7 +13,9 @@
 
 @property (strong, nonatomic,readwrite) UICollectionView *collectionView;
 
-@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) CADisplayLink *timer;
+
+@property (assign, nonatomic) double time;
 
 @property (assign, nonatomic) NSInteger numOfPerSection;
 
@@ -22,6 +24,8 @@
 @property (assign, nonatomic) NSIndexPath *nowIndexPath;
 
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
+
+@property (assign, nonatomic) CGFloat widthPerTime;
 
 @end
 
@@ -72,6 +76,7 @@ static NSInteger CCViewScrollMaxSection = 200;
     self.viewEdge = UIEdgeInsetsZero;
     self.direction = UICollectionViewScrollDirectionHorizontal;
     self.itemPadding = 10.0;
+    self.pageControl = YES;
 }
 
 #pragma mark - public method 
@@ -109,6 +114,13 @@ static NSInteger CCViewScrollMaxSection = 200;
 }
 
 #pragma mark - setParam
+- (void)setPageControl:(BOOL)pageControl
+{
+    _pageControl = pageControl;
+    if (!pageControl) {
+        self.widthPerTime = self.direction ? CGRectGetWidth(self.collectionView.frame)/60/self.timeInterval : CGRectGetHeight(self.collectionView.frame)/60/self.timeInterval;
+    }
+}
 
 - (void)setModelArray:(NSArray *)modelArray
 {
@@ -136,6 +148,10 @@ static NSInteger CCViewScrollMaxSection = 200;
     [self cancleTimer];
     
     [self setupTimer];
+    
+    if (!self.pageControl) {
+        self.widthPerTime = self.direction ? CGRectGetWidth(self.collectionView.frame)/60/self.timeInterval : CGRectGetHeight(self.collectionView.frame)/60/self.timeInterval;
+    }
 }
 
 - (void)setUserDragEnable:(BOOL)userDragEnable
@@ -148,8 +164,8 @@ static NSInteger CCViewScrollMaxSection = 200;
 
 - (void)setupTimer
 {
-    self.timer = [NSTimer timerWithTimeInterval:self.timeInterval target:self selector:@selector(timerRun:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(timerRun:)];
+    [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)cancleTimer
@@ -158,22 +174,33 @@ static NSInteger CCViewScrollMaxSection = 200;
     _timer = nil;
 }
 
-- (void)timerRun:(NSTimer *)timer
+- (void)timerRun:(CADisplayLink *)timer
 {
-    NSIndexPath *first = self.nowIndexPath;
-    NSIndexPath *new = [NSIndexPath indexPathForRow:first.row+1 inSection:first.section];
-    if (first.row >= self.numOfPerSection - 1) {
-        if (self.infinite) {
-            new = [NSIndexPath indexPathForRow:0 inSection:first.section + 1];
-            if (new.section >= CCViewScrollMaxSection) {
-                new = [NSIndexPath indexPathForRow:0 inSection:0];
+    self.time += timer.duration;
+    if (self.pageControl) {
+        if (self.time >= self.timeInterval) {
+            self.time = 0.0;
+            NSIndexPath *first = self.nowIndexPath;
+            NSIndexPath *new = [NSIndexPath indexPathForRow:first.row+1 inSection:first.section];
+            if (first.row >= self.numOfPerSection - 1) {
+                if (self.infinite) {
+                    new = [NSIndexPath indexPathForRow:0 inSection:first.section + 1];
+                    if (new.section >= CCViewScrollMaxSection) {
+                        new = [NSIndexPath indexPathForRow:0 inSection:0];
+                    }
+                }else{
+                    new = [NSIndexPath indexPathForRow:0 inSection:0];
+                }
             }
+            [self.collectionView setContentOffset:[self targetPointForIndexPath:new] animated:YES];
+        }
+    }else{
+        if (self.direction == UICollectionViewScrollDirectionHorizontal) {
+            [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + self.widthPerTime, self.collectionView.contentOffset.y) animated:NO];
         }else{
-             new = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x , self.collectionView.contentOffset.y + self.widthPerTime) animated:NO];
         }
     }
-    
-    [self.collectionView setContentOffset:[self targetPointForIndexPath:new] animated:YES];
 }
 
 #pragma mark - canculate
@@ -300,7 +327,7 @@ static NSInteger CCViewScrollMaxSection = 200;
     CCViewScrollViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.CC_reUseStringKey forIndexPath:indexPath];
     if (!cell.subView) {
         cell.viewEdge = self.viewEdge;
-        cell.subView = [self.dataSource CC_viewForModel:model];
+        cell.subView = [self.dataSource cc_viewForModel:model];
     }
     return cell;
 }
@@ -320,14 +347,25 @@ static NSInteger CCViewScrollMaxSection = 200;
     return [self getEdgeInsetsForSection:section];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.pageControl) {
+        return self.itemSize;
+    }else{
+        NSObject * model = self.modelArray[indexPath.row];
+        CGSize size = [self.dataSource cc_viewForModel:model index:indexPath.row];
+        return size;
+    }
+}
+
 #pragma mark - Collection Delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.delegate respondsToSelector:@selector(CC_scrollDidSelectItem:model:view:)]) {
+    if ([self.delegate respondsToSelector:@selector(cc_scrollDidSelectItem:model:view:)]) {
         CCViewScrollViewCell *cell = (CCViewScrollViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
         NSObject * model = self.modelArray[indexPath.row];
-        [self.delegate CC_scrollDidSelectItem:indexPath.row model:model view:cell.subView];
+        [self.delegate cc_scrollDidSelectItem:indexPath.row model:model view:cell.subView];
     }
 }
 
@@ -343,8 +381,8 @@ static NSInteger CCViewScrollMaxSection = 200;
     }
     
     if (oldPath != self.nowIndexPath) {
-        if ([self.delegate respondsToSelector:@selector(CC_scrollDidScrollFromIndex:toIndex:)]) {
-            [self.delegate CC_scrollDidScrollFromIndex:oldPath.row toIndex:self.nowIndexPath.row];
+        if ([self.delegate respondsToSelector:@selector(cc_scrollDidScrollFromIndex:toIndex:)]) {
+            [self.delegate cc_scrollDidScrollFromIndex:oldPath.row toIndex:self.nowIndexPath.row];
         }
     }
 }
@@ -383,7 +421,12 @@ static NSInteger CCViewScrollMaxSection = 200;
     
     if (!CGRectEqualToRect(self.collectionView.frame, self.frame)) {
         self.collectionView.frame = self.bounds;
-        self.itemSize = CGSizeMake(CGRectGetWidth(self.collectionView.frame)*0.8, CGRectGetHeight(self.collectionView.frame)*0.8);
+        if (CGSizeEqualToSize(self.itemSize, CGSizeZero)) {
+            self.itemSize = CGSizeMake(CGRectGetWidth(self.collectionView.frame)*0.8, CGRectGetHeight(self.collectionView.frame)*0.8);
+        }
+        if (!self.pageControl) {
+            self.widthPerTime = self.direction ? CGRectGetWidth(self.collectionView.frame)/60/self.timeInterval : CGRectGetHeight(self.collectionView.frame)/60/self.timeInterval;
+        }
         [self layoutNeedUpdate];
     }
 }

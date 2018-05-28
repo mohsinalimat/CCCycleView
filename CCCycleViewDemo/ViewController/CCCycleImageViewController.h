@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CCCycleImageViewController.h
 //  CCCycleViewDemo
 //
 //  Created by MDLK-CC on 2018/5/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CCCycleImageViewController : UIViewController
 
 
 @end

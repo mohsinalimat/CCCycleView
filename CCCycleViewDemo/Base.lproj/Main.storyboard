@@ -45,11 +45,13 @@
                     <navigationItem key="navigationItem" id="JsC-5k-LbR"/>
                     <connections>
                         <segue destination="OvS-Pb-dUh" kind="show" identifier="detailSegue" id="1Rc-UB-a1Z"/>
+                        <segue destination="Gr9-vw-C6O" kind="show" identifier="cycleView" id="Tjb-pe-Gvm"/>
+                        <segue destination="Ucq-fi-zvT" kind="show" identifier="marqueeSeque" id="Lkp-gS-t75"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C8-XY-3kC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-647" y="283"/>
+            <point key="canvasLocation" x="-668" y="312"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pZJ-BN-HEG">
@@ -67,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="-1598" y="283"/>
         </scene>
-        <!--View Controller-->
+        <!--Cycle Image View Controller-->
         <scene sceneID="R1J-bO-fz2">
             <objects>
-                <viewController id="OvS-Pb-dUh" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="OvS-Pb-dUh" customClass="CCCycleImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xvj-RM-GeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,7 +197,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-Y6-Ony" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="312"/>
+            <point key="canvasLocation" x="494" y="114"/>
+        </scene>
+        <!--Cycle View Controller-->
+        <scene sceneID="E8o-TW-hUx">
+            <objects>
+                <viewController id="Gr9-vw-C6O" customClass="CCCycleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gde-bG-jUS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99a-ai-jy1" customClass="CCViewScroolView">
+                                <rect key="frame" x="0.0" y="273.5" width="375" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4jH-N7-0UM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DQD-au-wF6" firstAttribute="trailing" secondItem="99a-ai-jy1" secondAttribute="trailing" id="QQ1-GT-rV6"/>
+                            <constraint firstItem="99a-ai-jy1" firstAttribute="centerY" secondItem="Gde-bG-jUS" secondAttribute="centerY" id="baF-qP-tyT"/>
+                            <constraint firstItem="99a-ai-jy1" firstAttribute="leading" secondItem="DQD-au-wF6" secondAttribute="leading" id="eet-is-kZD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DQD-au-wF6"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewScrollView" destination="99a-ai-jy1" id="pwc-PQ-7jv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WER-ae-Znv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="798"/>
+        </scene>
+        <!--Marquee View Controller-->
+        <scene sceneID="wjl-K8-DgX">
+            <objects>
+                <viewController id="Ucq-fi-zvT" customClass="CCMarqueeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tbd-DP-YzN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aT6-WB-EXD" customClass="CCViewScroolView">
+                                <rect key="frame" x="0.0" y="124" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EiX-yY-Q8C"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8B6-hQ-uls" firstAttribute="trailing" secondItem="aT6-WB-EXD" secondAttribute="trailing" id="8Co-Ca-Xvo"/>
+                            <constraint firstItem="aT6-WB-EXD" firstAttribute="top" secondItem="8B6-hQ-uls" secondAttribute="top" constant="60" id="nes-kQ-X4s"/>
+                            <constraint firstItem="aT6-WB-EXD" firstAttribute="leading" secondItem="8B6-hQ-uls" secondAttribute="leading" id="otB-ku-P8E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8B6-hQ-uls"/>
+                    </view>
+                    <connections>
+                        <outlet property="marqueeView" destination="aT6-WB-EXD" id="7yh-mn-fm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aph-dl-wgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="1533"/>
         </scene>
     </scenes>
 </document>

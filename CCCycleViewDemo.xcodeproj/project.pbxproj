@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30FF46E320A42D660005D93F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46E220A42D660005D93F /* AppDelegate.m */; };
-		30FF46E620A42D660005D93F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46E520A42D660005D93F /* ViewController.m */; };
+		30FF46E620A42D660005D93F /* CCCycleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46E520A42D660005D93F /* CCCycleImageViewController.m */; };
 		30FF46E920A42D660005D93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FF46E720A42D660005D93F /* Main.storyboard */; };
 		30FF46EB20A42D660005D93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30FF46EA20A42D660005D93F /* Assets.xcassets */; };
 		30FF46EE20A42D660005D93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FF46EC20A42D660005D93F /* LaunchScreen.storyboard */; };
@@ -18,14 +18,18 @@
 		30FF470020A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */; };
 		30FF470320A432890005D93F /* CCCycleViewDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF470220A432890005D93F /* CCCycleViewDemoModel.m */; };
 		356FB48120B3FC97009412FA /* CCCycleDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48020B3FC97009412FA /* CCCycleDemoController.m */; };
+		356FB48420BC4ECF009412FA /* CCCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48320BC4ECF009412FA /* CCCycleViewController.m */; };
+		356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48620BC4FB1009412FA /* CCCycleDemoView.m */; };
+		356FB48920BC4FBA009412FA /* CCCycleDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */; };
+		356FB48D20BC5673009412FA /* CCMarqueeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48C20BC5673009412FA /* CCMarqueeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30FF46DE20A42D660005D93F /* CCCycleViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCCycleViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FF46E120A42D660005D93F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30FF46E220A42D660005D93F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30FF46E420A42D660005D93F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		30FF46E520A42D660005D93F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		30FF46E420A42D660005D93F /* CCCycleImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleImageViewController.h; sourceTree = "<group>"; };
+		30FF46E520A42D660005D93F /* CCCycleImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleImageViewController.m; sourceTree = "<group>"; };
 		30FF46E820A42D660005D93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30FF46EA20A42D660005D93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30FF46ED20A42D660005D93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,13 @@
 		30FF470220A432890005D93F /* CCCycleViewDemoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleViewDemoModel.m; sourceTree = "<group>"; };
 		356FB47F20B3FC97009412FA /* CCCycleDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleDemoController.h; sourceTree = "<group>"; };
 		356FB48020B3FC97009412FA /* CCCycleDemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleDemoController.m; sourceTree = "<group>"; };
+		356FB48220BC4ECF009412FA /* CCCycleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleViewController.h; sourceTree = "<group>"; };
+		356FB48320BC4ECF009412FA /* CCCycleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleViewController.m; sourceTree = "<group>"; };
+		356FB48520BC4FB1009412FA /* CCCycleDemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleDemoView.h; sourceTree = "<group>"; };
+		356FB48620BC4FB1009412FA /* CCCycleDemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleDemoView.m; sourceTree = "<group>"; };
+		356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCycleDemoView.xib; sourceTree = "<group>"; };
+		356FB48B20BC5673009412FA /* CCMarqueeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarqueeViewController.h; sourceTree = "<group>"; };
+		356FB48C20BC5673009412FA /* CCMarqueeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCMarqueeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +87,12 @@
 				30FF46F720A42D6B0005D93F /* CCCycleView */,
 				30FF46E120A42D660005D93F /* AppDelegate.h */,
 				30FF46E220A42D660005D93F /* AppDelegate.m */,
-				30FF46E420A42D660005D93F /* ViewController.h */,
-				30FF46E520A42D660005D93F /* ViewController.m */,
-				356FB47F20B3FC97009412FA /* CCCycleDemoController.h */,
-				356FB48020B3FC97009412FA /* CCCycleDemoController.m */,
+				356FB48A20BC5652009412FA /* ViewController */,
 				30FF470120A432890005D93F /* CCCycleViewDemoModel.h */,
 				30FF470220A432890005D93F /* CCCycleViewDemoModel.m */,
+				356FB48520BC4FB1009412FA /* CCCycleDemoView.h */,
+				356FB48620BC4FB1009412FA /* CCCycleDemoView.m */,
+				356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */,
 				30FF46E720A42D660005D93F /* Main.storyboard */,
 				30FF46EA20A42D660005D93F /* Assets.xcassets */,
 				30FF46EC20A42D660005D93F /* LaunchScreen.storyboard */,
@@ -102,6 +113,21 @@
 				30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */,
 			);
 			path = CCCycleView;
+			sourceTree = "<group>";
+		};
+		356FB48A20BC5652009412FA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				30FF46E420A42D660005D93F /* CCCycleImageViewController.h */,
+				30FF46E520A42D660005D93F /* CCCycleImageViewController.m */,
+				356FB48220BC4ECF009412FA /* CCCycleViewController.h */,
+				356FB48320BC4ECF009412FA /* CCCycleViewController.m */,
+				356FB47F20B3FC97009412FA /* CCCycleDemoController.h */,
+				356FB48020B3FC97009412FA /* CCCycleDemoController.m */,
+				356FB48B20BC5673009412FA /* CCMarqueeViewController.h */,
+				356FB48C20BC5673009412FA /* CCMarqueeViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +190,7 @@
 			files = (
 				30FF46EE20A42D660005D93F /* LaunchScreen.storyboard in Resources */,
 				30FF46EB20A42D660005D93F /* Assets.xcassets in Resources */,
+				356FB48920BC4FBA009412FA /* CCCycleDemoView.xib in Resources */,
 				30FF46E920A42D660005D93F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,13 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30FF46E620A42D660005D93F /* ViewController.m in Sources */,
+				30FF46E620A42D660005D93F /* CCCycleImageViewController.m in Sources */,
+				356FB48420BC4ECF009412FA /* CCCycleViewController.m in Sources */,
 				356FB48120B3FC97009412FA /* CCCycleDemoController.m in Sources */,
 				30FF46FA20A42D860005D93F /* CCViewScroolView.m in Sources */,
+				356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */,
 				30FF470020A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m in Sources */,
 				30FF46F120A42D660005D93F /* main.m in Sources */,
 				30FF46FD20A42D930005D93F /* CCViewScrollViewCell.m in Sources */,
 				30FF46E320A42D660005D93F /* AppDelegate.m in Sources */,
+				356FB48D20BC5673009412FA /* CCMarqueeViewController.m in Sources */,
 				30FF470320A432890005D93F /* CCCycleViewDemoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
