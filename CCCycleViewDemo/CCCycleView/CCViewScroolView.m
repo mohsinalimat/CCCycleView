@@ -8,6 +8,7 @@
 
 #import "CCViewScroolView.h"
 #import "CCViewScrollViewCell.h"
+#import "CCWeakDelegate.h"
 
 @interface CCViewScroolView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -164,12 +165,14 @@ static NSInteger CCViewScrollMaxSection = 200;
 
 - (void)setupTimer
 {
-    self.timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(timerRun:)];
+    CCWeakDelegate *delegate = [CCWeakDelegate delegateWithTarget:self];
+    self.timer = [CADisplayLink displayLinkWithTarget:delegate selector:@selector(timerRun:)];
     [self.timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)cancleTimer
 {
+    [_timer removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     [_timer invalidate];
     _timer = nil;
 }

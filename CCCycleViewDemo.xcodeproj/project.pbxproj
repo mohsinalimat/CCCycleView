@@ -22,6 +22,7 @@
 		356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48620BC4FB1009412FA /* CCCycleDemoView.m */; };
 		356FB48920BC4FBA009412FA /* CCCycleDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */; };
 		356FB48D20BC5673009412FA /* CCMarqueeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48C20BC5673009412FA /* CCMarqueeViewController.m */; };
+		356FB49020BDA7B1009412FA /* CCWeakDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCycleDemoView.xib; sourceTree = "<group>"; };
 		356FB48B20BC5673009412FA /* CCMarqueeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarqueeViewController.h; sourceTree = "<group>"; };
 		356FB48C20BC5673009412FA /* CCMarqueeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCMarqueeViewController.m; sourceTree = "<group>"; };
+		356FB48E20BDA7B1009412FA /* CCWeakDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWeakDelegate.h; sourceTree = "<group>"; };
+		356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWeakDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				30FF46FB20A42D920005D93F /* CCViewScrollViewCell.m */,
 				30FF46FF20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.h */,
 				30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */,
+				356FB48E20BDA7B1009412FA /* CCWeakDelegate.h */,
+				356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */,
 			);
 			path = CCCycleView;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				356FB48420BC4ECF009412FA /* CCCycleViewController.m in Sources */,
 				356FB48120B3FC97009412FA /* CCCycleDemoController.m in Sources */,
 				30FF46FA20A42D860005D93F /* CCViewScroolView.m in Sources */,
+				356FB49020BDA7B1009412FA /* CCWeakDelegate.m in Sources */,
 				356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */,
 				30FF470020A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m in Sources */,
 				30FF46F120A42D660005D93F /* main.m in Sources */,
