@@ -64,6 +64,8 @@ static NSInteger CCViewScrollMaxSection = 200;
     self.collectionView.dataSource = self;
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.contentInset = UIEdgeInsetsZero;
+
     [self addSubview:self.collectionView];
     
     [self paraInit];
@@ -78,6 +80,7 @@ static NSInteger CCViewScrollMaxSection = 200;
     self.direction = UICollectionViewScrollDirectionHorizontal;
     self.itemPadding = 10.0;
     self.pageControl = YES;
+    self.nowIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 }
 
 #pragma mark - public method 
@@ -158,7 +161,7 @@ static NSInteger CCViewScrollMaxSection = 200;
 - (void)setUserDragEnable:(BOOL)userDragEnable
 {
     _userDragEnable = userDragEnable;
-    self.collectionView.userInteractionEnabled = userDragEnable;
+    self.collectionView.scrollEnabled = userDragEnable;
 }
 
 #pragma mark - Timer
@@ -233,7 +236,7 @@ static NSInteger CCViewScrollMaxSection = 200;
         
         CGFloat left = fmod(realX, sectionW);
         NSInteger row = (left - middleLeftPadding)/(layout.minimumLineSpacing + layout.itemSize.width);
-        return [NSIndexPath indexPathForRow:row inSection:section];
+        return [NSIndexPath indexPathForRow:MAX(row, 0) inSection:MAX(section, 0)];
     }else{
         CGFloat firstTopPadding = [self getEdgeInsetsForSection:0].top;
         CGFloat middleTopPadding = [self getEdgeInsetsForSection:1].top;
@@ -251,7 +254,7 @@ static NSInteger CCViewScrollMaxSection = 200;
         
         CGFloat left = fmod(realY, sectionH);
         NSInteger row = (left - middleTopPadding)/(layout.minimumInteritemSpacing + layout.itemSize.height);
-        return [NSIndexPath indexPathForRow:row inSection:section];
+        return [NSIndexPath indexPathForRow:MAX(row, 0) inSection:MAX(section, 0)];
     }
 }
 
@@ -297,8 +300,8 @@ static NSInteger CCViewScrollMaxSection = 200;
         padding = (CGRectGetHeight(self.collectionView.frame) - layout.itemSize.height)/2.0;
     }
     
-    CGFloat verticalPadding = (CGRectGetHeight(self.collectionView.frame) - self.itemSize.height)/2;
-    CGFloat horizontalPadding = (CGRectGetWidth(self.collectionView.frame) - self.itemSize.width)/2;
+    CGFloat verticalPadding = (CGRectGetHeight(self.collectionView.frame) - self.itemSize.height)/2.0;
+    CGFloat horizontalPadding = (CGRectGetWidth(self.collectionView.frame) - self.itemSize.width)/2.0;
     
     if (!self.infinite) {
         return self.direction ? UIEdgeInsetsMake(verticalPadding, padding, verticalPadding, padding) : UIEdgeInsetsMake(padding, horizontalPadding, padding, horizontalPadding);

@@ -29,7 +29,7 @@
         model.cc_reUseStringKey = @"UIImageView";
         [data addObject:model];
     }
-    self.viewScrollView.viewEdge = UIEdgeInsetsMake(5, 10, 2, 8);
+    self.viewScrollView.viewEdge = UIEdgeInsetsZero;
     self.viewScrollView.direction = UICollectionViewScrollDirectionHorizontal;
     self.viewScrollView.timeInterval = 5.0f;
     self.viewScrollView.infinite = YES;
@@ -39,7 +39,8 @@
     self.viewScrollView.userDragEnable = YES;
     self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger index) {
         UIImageView *imageView = (UIImageView *)view;
-        imageView.image = [UIImage imageNamed:@"0"];
+        UIImage *image = [UIImage imageNamed:@"0"];
+        imageView.image = image;
     };
     [self.viewScrollView layoutNeedUpdate];
     [self.viewScrollView reloadData];

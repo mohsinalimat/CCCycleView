@@ -31,6 +31,7 @@
     self.viewScrollView.modelArray = data;
     self.viewScrollView.dataSource = self;
     self.viewScrollView.delegate = self;
+    self.viewScrollView.userDragEnable = NO;
     self.viewScrollView.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 65);
     self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger index) {
         CCCycleDemoView *cycleView = (CCCycleDemoView *)view;
