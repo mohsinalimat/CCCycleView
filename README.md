@@ -1,11 +1,12 @@
 # CCCycleView
 一个view循环器，目前来说，可以用来制作：
 ·1.轮播图
-[cycleImage](https://github.com/zackschen/CCCycleView/Gifs/CycleImage.gif)
+![cycleImage](CCCycleView/Gifs/CycleImage.gif)
 ·2.view循环
-[cycleView](https://github.com/zackschen/CCCycleView/Gifs/CycleView.gif)
+![cycleView](CCCycleView/Gifs/CycleView.gif)
 ·3.跑马灯效果
-[cycleImage](https://github.com/zackschen/CCCycleView/Gifs/MarqueueView.gif)
+
+![cycleImage](CCCycleView/Gifs/MarqueueView.gif)
 
 ### Requirement
 
@@ -126,5 +127,7 @@ self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger ind
 CCCycleView is released under the MIT license.
 ## Feedback
 ·Email：cczacks@gmail.com
+
 ·Weibo：鐵甲陳小寶
+
 ·Twitter：zacks_Chen
