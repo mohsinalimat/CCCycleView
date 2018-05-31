@@ -11,15 +11,15 @@
 #import "NSObject+CCViewScrollViewModel.h"
 
 @protocol CCViewScrollViewDataSource <NSObject>
-
+@required
 - (UIView *)cc_viewForModel:(id)model;
-
+@optional
 - (CGSize)cc_viewForModel:(id)model index:(NSInteger)index;
 
 @end
 
 @protocol CCViewScrollViewDelegate <NSObject>
-
+@optional
 - (void)cc_scrollDidSelectItem:(NSInteger)index model:(id)model view:(UIView *)view;
 
 - (void)cc_scrollDidScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
@@ -33,6 +33,7 @@
 @property (weak , nonatomic) id<CCViewScrollViewDelegate> delegate;
 /**
  default is UICollectionViewScrollDirectionHorizontal
+ warning:after U change,u should call layoutNeedUpdate
  */
 @property (assign, nonatomic) UICollectionViewScrollDirection direction;
 /**
@@ -60,16 +61,19 @@
  When scrollDirection is horizontal,item padding is right to next's left.
  When scrollDirection is vertical,item padding is bottom to next's top.
  default is 10.0
+ warning:after U change,u should call layoutNeedUpdate
  */
 @property (assign, nonatomic) CGFloat itemPadding;
 /**
  the edge in cell.contentView
  default is UIEdgeInsetsZero
+ warning:after U change,u should call layoutNeedUpdate
  */
 @property (assign, nonatomic) UIEdgeInsets viewEdge;
 /**
  the view Size
  default is (view's height and view's width) * 0.8
+ warning:after U change,u should call layoutNeedUpdate
  */
 @property (assign, nonatomic) CGSize itemSize;
 /**

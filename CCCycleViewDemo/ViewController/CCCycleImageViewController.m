@@ -38,39 +38,21 @@
     self.viewScrollView.delegate = self;
     self.viewScrollView.userDragEnable = YES;
     self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger index) {
-        UILabel *label = (UILabel *)[view viewWithTag:10];
-        label.text = [NSString stringWithFormat:@"Index:%ld",(long)index];
+        UIImageView *imageView = (UIImageView *)view;
+        imageView.image = [UIImage imageNamed:@"0"];
     };
+    [self.viewScrollView layoutNeedUpdate];
     [self.viewScrollView reloadData];
 }
-
-
 
 
 #pragma mark - CCViewScrollViewDataSource
 - (UIView *)cc_viewForModel:(NSObject *)model
 {
-    if ([model.cc_reUseStringKey isEqualToString:@"UILabel"]) {
-        UILabel *label = [[UILabel alloc] init];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor cyanColor];
-        return label;
-    }
-    
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:arc4random()%255/255.0];
-    UILabel *label = [[UILabel alloc] init];
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
-    label.tag = 10;
-    [view addSubview:label];
-    [view addConstraints:@[
-                                       [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
-                                       [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0],
-                                       [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
-                                       [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]]];
-    return view;
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    return imageView;
 }
 
 #pragma mark - CCViewScrollViewDelegate
