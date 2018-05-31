@@ -1,13 +1,9 @@
 # CCCycleView
 一个view循环器，目前来说，可以用来制作：
-·1.轮播图
-![cycleImage](./Gifs/CycleImage.gif)
 
-·2.view循环
-![cycleView](./Gifs/CycleView.gif)
-
-·3.跑马灯效果
-![cycleImage](./Gifs/MarqueueView.gif)
+|                轮播图                |              view循环              |              跑马灯效果               |
+| :----------------------------------: | :--------------------------------: | :-----------------------------------: |
+| ![cycleImage](./Gifs/CycleImage.gif) | ![cycleView](./Gifs/CycleView.gif) | ![cycleImage](./Gifs/MarqueeView.gif) |
 
 ### Requirement
 
