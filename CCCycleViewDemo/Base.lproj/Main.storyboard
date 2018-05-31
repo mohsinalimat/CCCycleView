@@ -208,10 +208,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99a-ai-jy1" customClass="CCViewScroolView">
-                                <rect key="frame" x="0.0" y="273.5" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="301" width="375" height="65"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="4jH-N7-0UM"/>
+                                    <constraint firstAttribute="height" constant="65" id="4jH-N7-0UM"/>
                                 </constraints>
                             </view>
                         </subviews>

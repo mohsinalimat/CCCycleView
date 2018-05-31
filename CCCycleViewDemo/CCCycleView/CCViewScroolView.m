@@ -128,7 +128,7 @@ static NSInteger CCViewScrollMaxSection = 200;
     _modelArray = modelArray;
     NSMutableSet *reuseKeys = [NSMutableSet set];
     for (NSObject * model in modelArray) {
-        [reuseKeys addObject:model.CC_reUseStringKey];
+        [reuseKeys addObject:model.cc_reUseStringKey];
     }
     for (NSString *key in reuseKeys) {
         [self.collectionView registerClass:[CCViewScrollViewCell class] forCellWithReuseIdentifier:key];
@@ -327,7 +327,7 @@ static NSInteger CCViewScrollMaxSection = 200;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSObject * model = self.modelArray[indexPath.row];
-    CCViewScrollViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.CC_reUseStringKey forIndexPath:indexPath];
+    CCViewScrollViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:model.cc_reUseStringKey forIndexPath:indexPath];
     if (!cell.subView) {
         cell.viewEdge = self.viewEdge;
         cell.subView = [self.dataSource cc_viewForModel:model];

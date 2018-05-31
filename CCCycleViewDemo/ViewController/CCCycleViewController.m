@@ -23,14 +23,15 @@
     NSMutableArray *data = [@[] mutableCopy];
     for (int i = 0; i < 10; i++) {
         NSObject *model = [[NSObject alloc] init];
-        model.CC_reUseStringKey = @"cycleView";
+        model.cc_reUseStringKey = @"cycleView";
         [data addObject:model];
     }
+    self.viewScrollView.itemPadding = 0;
     self.viewScrollView.direction = UICollectionViewScrollDirectionVertical;
     self.viewScrollView.modelArray = data;
     self.viewScrollView.dataSource = self;
     self.viewScrollView.delegate = self;
-    self.viewScrollView.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 120);
+    self.viewScrollView.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 65);
     self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger index) {
         CCCycleDemoView *cycleView = (CCCycleDemoView *)view;
         cycleView.titleOneLabel.text = @"传闻：NS版《精灵宝可梦》即将公布";

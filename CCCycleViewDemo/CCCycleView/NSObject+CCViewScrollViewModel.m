@@ -13,15 +13,15 @@ static void *reUseStringKey = (void *)@"reUseStringKey";
 
 @implementation NSObject (CCViewScrollViewModel)
 
-- (NSString *)CC_reUseStringKey
+- (NSString *)cc_reUseStringKey
 {
     NSString *str = objc_getAssociatedObject(self, reUseStringKey);
     return str;
 }
 
-- (void)setCC_reUseStringKey:(NSString *)CC_reUseStringKey
+- (void)setCc_reUseStringKey:(NSString *)cc_reUseStringKey
 {
-    objc_setAssociatedObject(self, reUseStringKey, CC_reUseStringKey, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, reUseStringKey, cc_reUseStringKey, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end

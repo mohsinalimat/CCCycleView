@@ -22,7 +22,7 @@
     NSMutableArray *data = [@[] mutableCopy];
     for (int i = 0; i < 10; i++) {
         NSObject *model = [[NSObject alloc] init];
-        model.CC_reUseStringKey = @"marqueee";
+        model.cc_reUseStringKey = @"marqueee";
         [data addObject:model];
     }
     self.marqueeView.itemPadding = 0;

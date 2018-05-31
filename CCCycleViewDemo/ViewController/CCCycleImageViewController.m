@@ -26,7 +26,7 @@
     NSMutableArray *data = [@[] mutableCopy];
     for (int i = 0; i < 10; i++) {
         NSObject *model = [[NSObject alloc] init];
-        model.CC_reUseStringKey = @"UIImageView";
+        model.cc_reUseStringKey = @"UIImageView";
         [data addObject:model];
     }
     self.viewScrollView.viewEdge = UIEdgeInsetsMake(5, 10, 2, 8);
@@ -50,7 +50,7 @@
 #pragma mark - CCViewScrollViewDataSource
 - (UIView *)cc_viewForModel:(NSObject *)model
 {
-    if ([model.CC_reUseStringKey isEqualToString:@"UILabel"]) {
+    if ([model.cc_reUseStringKey isEqualToString:@"UILabel"]) {
         UILabel *label = [[UILabel alloc] init];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor cyanColor];

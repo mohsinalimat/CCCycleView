@@ -10,6 +10,6 @@
 
 @interface NSObject (CCViewScrollViewModel)
 
-@property(strong, nonatomic) NSString *CC_reUseStringKey;
+@property(strong, nonatomic) NSString *cc_reUseStringKey;
 
 @end
