@@ -1,11 +1,11 @@
 # CCCycleView
 一个view循环器，目前来说，可以用来制作：
 ·1.轮播图
-[cycleImage]()
+[cycleImage](https://github.com/zackschen/CCCycleView/Gifs/CycleImage.gif)
 ·2.view循环
-[cycleView]()
+[cycleView](https://github.com/zackschen/CCCycleView/Gifs/CycleView.gif)
 ·3.跑马灯效果
-[cycleImage]()
+[cycleImage](https://github.com/zackschen/CCCycleView/Gifs/MarqueueView.gif)
 
 ### Requirement
 
@@ -15,7 +15,7 @@
 
 ·ARC
 
-#### 使用
+### 使用
 
 使用collectionView作为基础，需要在数据源对象中加入相应的reusekey，以根据数据不同，展示不同的view；还需要返回需要循环播放的view。
 
@@ -122,4 +122,9 @@ self.viewScrollView.configureViewBlock = ^(UIView *view, id model, NSInteger ind
 
 @end
 ```
-
+## License
+CCCycleView is released under the MIT license.
+## Feedback
+·Email：cczacks@gmail.com
+·Weibo：鐵甲陳小寶
+·Twitter：zacks_Chen
