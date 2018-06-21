@@ -22,7 +22,7 @@
 
 @property (assign, nonatomic) CGPoint lastContentPosition;
 
-@property (assign, nonatomic) NSIndexPath *nowIndexPath;
+@property (strong, nonatomic) NSIndexPath *nowIndexPath;
 
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 
@@ -401,7 +401,11 @@ static NSInteger CCViewScrollMaxSection = 200;
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
     if ((self.direction && fabs(velocity.x) < 0.5) || (self.direction == 0 && fabs(velocity.y) < 0.5)) {//滑动力度小 回到最近的cell
-        targetContentOffset->x = [self targetPointForIndexPath:self.nowIndexPath].x;
+        if (self.direction) {
+            targetContentOffset->x = [self targetPointForIndexPath:self.nowIndexPath].x;
+        }else{
+            targetContentOffset->y = [self targetPointForIndexPath:self.nowIndexPath].y;
+        }
         return;
     }
     NSIndexPath *index = [self indexPathForPoint:*targetContentOffset];
@@ -417,7 +421,9 @@ static NSInteger CCViewScrollMaxSection = 200;
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    [self setupTimer];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.timeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setupTimer];
+    });
 }
 
 
