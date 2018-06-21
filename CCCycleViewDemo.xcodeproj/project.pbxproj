@@ -13,16 +13,16 @@
 		30FF46EB20A42D660005D93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30FF46EA20A42D660005D93F /* Assets.xcassets */; };
 		30FF46EE20A42D660005D93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FF46EC20A42D660005D93F /* LaunchScreen.storyboard */; };
 		30FF46F120A42D660005D93F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46F020A42D660005D93F /* main.m */; };
-		30FF46FA20A42D860005D93F /* CCViewScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46F920A42D860005D93F /* CCViewScroolView.m */; };
-		30FF46FD20A42D930005D93F /* CCViewScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46FB20A42D920005D93F /* CCViewScrollViewCell.m */; };
-		30FF470020A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */; };
 		30FF470320A432890005D93F /* CCCycleViewDemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF470220A432890005D93F /* CCCycleViewDemoModel.m */; };
 		356FB48120B3FC97009412FA /* CCCycleDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48020B3FC97009412FA /* CCCycleDemoController.m */; };
 		356FB48420BC4ECF009412FA /* CCCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48320BC4ECF009412FA /* CCCycleViewController.m */; };
 		356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48620BC4FB1009412FA /* CCCycleDemoView.m */; };
 		356FB48920BC4FBA009412FA /* CCCycleDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */; };
 		356FB48D20BC5673009412FA /* CCMarqueeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48C20BC5673009412FA /* CCMarqueeViewController.m */; };
-		356FB49020BDA7B1009412FA /* CCWeakDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */; };
+		35960E4720DBF8C5000BEEA9 /* CCViewScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35960E4020DBF8C5000BEEA9 /* CCViewScrollViewCell.m */; };
+		35960E4820DBF8C5000BEEA9 /* CCViewScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35960E4220DBF8C5000BEEA9 /* CCViewScroolView.m */; };
+		35960E4920DBF8C5000BEEA9 /* CCWeakDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35960E4420DBF8C5000BEEA9 /* CCWeakDelegate.m */; };
+		35960E4A20DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35960E4620DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,6 @@
 		30FF46ED20A42D660005D93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30FF46EF20A42D660005D93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30FF46F020A42D660005D93F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		30FF46F820A42D860005D93F /* CCViewScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewScroolView.h; sourceTree = "<group>"; };
-		30FF46F920A42D860005D93F /* CCViewScroolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewScroolView.m; sourceTree = "<group>"; };
-		30FF46FB20A42D920005D93F /* CCViewScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewScrollViewCell.m; sourceTree = "<group>"; };
-		30FF46FC20A42D920005D93F /* CCViewScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewScrollViewCell.h; sourceTree = "<group>"; };
-		30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCViewScrollViewModel.m"; sourceTree = "<group>"; };
-		30FF46FF20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCViewScrollViewModel.h"; sourceTree = "<group>"; };
 		30FF470120A432890005D93F /* CCCycleViewDemoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleViewDemoModel.h; sourceTree = "<group>"; };
 		30FF470220A432890005D93F /* CCCycleViewDemoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCCycleViewDemoModel.m; sourceTree = "<group>"; };
 		356FB47F20B3FC97009412FA /* CCCycleDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCCycleDemoController.h; sourceTree = "<group>"; };
@@ -53,8 +47,14 @@
 		356FB48820BC4FBA009412FA /* CCCycleDemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CCCycleDemoView.xib; sourceTree = "<group>"; };
 		356FB48B20BC5673009412FA /* CCMarqueeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCMarqueeViewController.h; sourceTree = "<group>"; };
 		356FB48C20BC5673009412FA /* CCMarqueeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCMarqueeViewController.m; sourceTree = "<group>"; };
-		356FB48E20BDA7B1009412FA /* CCWeakDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCWeakDelegate.h; sourceTree = "<group>"; };
-		356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCWeakDelegate.m; sourceTree = "<group>"; };
+		35960E3F20DBF8C5000BEEA9 /* CCViewScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewScrollViewCell.h; sourceTree = "<group>"; };
+		35960E4020DBF8C5000BEEA9 /* CCViewScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewScrollViewCell.m; sourceTree = "<group>"; };
+		35960E4120DBF8C5000BEEA9 /* CCViewScroolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCViewScroolView.h; sourceTree = "<group>"; };
+		35960E4220DBF8C5000BEEA9 /* CCViewScroolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCViewScroolView.m; sourceTree = "<group>"; };
+		35960E4320DBF8C5000BEEA9 /* CCWeakDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWeakDelegate.h; sourceTree = "<group>"; };
+		35960E4420DBF8C5000BEEA9 /* CCWeakDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWeakDelegate.m; sourceTree = "<group>"; };
+		35960E4520DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CCViewScrollViewModel.h"; sourceTree = "<group>"; };
+		35960E4620DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CCViewScrollViewModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		30FF46E020A42D660005D93F /* CCCycleViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				30FF46F720A42D6B0005D93F /* CCCycleView */,
+				35960E3E20DBF8C5000BEEA9 /* CCCycleView */,
 				30FF46E120A42D660005D93F /* AppDelegate.h */,
 				30FF46E220A42D660005D93F /* AppDelegate.m */,
 				356FB48A20BC5652009412FA /* ViewController */,
@@ -105,21 +105,6 @@
 			path = CCCycleViewDemo;
 			sourceTree = "<group>";
 		};
-		30FF46F720A42D6B0005D93F /* CCCycleView */ = {
-			isa = PBXGroup;
-			children = (
-				30FF46F820A42D860005D93F /* CCViewScroolView.h */,
-				30FF46F920A42D860005D93F /* CCViewScroolView.m */,
-				30FF46FC20A42D920005D93F /* CCViewScrollViewCell.h */,
-				30FF46FB20A42D920005D93F /* CCViewScrollViewCell.m */,
-				30FF46FF20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.h */,
-				30FF46FE20A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m */,
-				356FB48E20BDA7B1009412FA /* CCWeakDelegate.h */,
-				356FB48F20BDA7B1009412FA /* CCWeakDelegate.m */,
-			);
-			path = CCCycleView;
-			sourceTree = "<group>";
-		};
 		356FB48A20BC5652009412FA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +119,21 @@
 			);
 			path = ViewController;
 			sourceTree = "<group>";
+		};
+		35960E3E20DBF8C5000BEEA9 /* CCCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				35960E3F20DBF8C5000BEEA9 /* CCViewScrollViewCell.h */,
+				35960E4020DBF8C5000BEEA9 /* CCViewScrollViewCell.m */,
+				35960E4120DBF8C5000BEEA9 /* CCViewScroolView.h */,
+				35960E4220DBF8C5000BEEA9 /* CCViewScroolView.m */,
+				35960E4320DBF8C5000BEEA9 /* CCWeakDelegate.h */,
+				35960E4420DBF8C5000BEEA9 /* CCWeakDelegate.m */,
+				35960E4520DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.h */,
+				35960E4620DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.m */,
+			);
+			path = CCCycleView;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -208,17 +208,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FF46E620A42D660005D93F /* CCCycleImageViewController.m in Sources */,
+				35960E4820DBF8C5000BEEA9 /* CCViewScroolView.m in Sources */,
 				356FB48420BC4ECF009412FA /* CCCycleViewController.m in Sources */,
 				356FB48120B3FC97009412FA /* CCCycleDemoController.m in Sources */,
-				30FF46FA20A42D860005D93F /* CCViewScroolView.m in Sources */,
-				356FB49020BDA7B1009412FA /* CCWeakDelegate.m in Sources */,
 				356FB48720BC4FB1009412FA /* CCCycleDemoView.m in Sources */,
-				30FF470020A42D9E0005D93F /* NSObject+CCViewScrollViewModel.m in Sources */,
+				35960E4920DBF8C5000BEEA9 /* CCWeakDelegate.m in Sources */,
 				30FF46F120A42D660005D93F /* main.m in Sources */,
-				30FF46FD20A42D930005D93F /* CCViewScrollViewCell.m in Sources */,
 				30FF46E320A42D660005D93F /* AppDelegate.m in Sources */,
+				35960E4A20DBF8C5000BEEA9 /* NSObject+CCViewScrollViewModel.m in Sources */,
 				356FB48D20BC5673009412FA /* CCMarqueeViewController.m in Sources */,
 				30FF470320A432890005D93F /* CCCycleViewDemoModel.m in Sources */,
+				35960E4720DBF8C5000BEEA9 /* CCViewScrollViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
