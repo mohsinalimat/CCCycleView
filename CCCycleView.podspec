@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author             = { "zacks" => "cczacks@gmail.com" }
 
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "http://EXAMPLE/CCCycleView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/zackschen/CCCycleView.git", :tag => "#{s.version}" }
 
   s.source_files  = "CCCycleView", "CCCycleView/*.{h,m}"
   s.public_header_files = "CCCycleView/*.h"
